@@ -8,6 +8,9 @@ const nextConfig = {
     defaultLocale: 'es',     // Establecer el idioma predeterminado a español
     localeDetection: true,   // Detectar automáticamente el idioma del navegador
   },
+  images: {
+    domains: ['cdn.pixabay.com'], // Permite la carga de imágenes desde Pixabay
+  },
 };
 
 module.exports = nextConfig;

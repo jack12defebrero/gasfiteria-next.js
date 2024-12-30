@@ -12,6 +12,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        scrollRight: "scrollRight 10s linear infinite", // Añadir la animación para desplazarse hacia la derecha
+      },
+      keyframes: {
+        scrollRight: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [],

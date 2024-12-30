@@ -11,17 +11,26 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 p-4 shadow-md">
+    <nav className="bg-gray-800 p-4 shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        {/* Logo o nombre */}
-        <div className="text-white text-2xl font-semibold">
-          <Link href="/">
-            {t('Inicio')}
-          </Link>
+        {/* Logo y enlace a WhatsApp */}
+        <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
+            <img
+              src="images/Logo_jean-transparente.png"
+              alt="Logo Soluciones Figueroa"
+              className="h-8"
+            />
+            <span className="text-2xl font-bold text-gray-800">Figueroa</span>
+          </a>
+         
         </div>
 
         {/* Menú de navegación en desktop */}
         <div className="hidden md:flex space-x-8">
+          <Link href="/">
+            <span className="text-white hover:text-gray-300 transition-colors">{t('Inicio')}</span>
+</Link>
           <Link href="/about">
             <span className="text-white hover:text-gray-300 transition-colors">{t('Nosotros')}</span>
           </Link>
@@ -31,6 +40,15 @@ const Navbar = () => {
           <Link href="/contact">
             <span className="text-white hover:text-gray-300 transition-colors">{t('Contacto')}</span>
           </Link>
+
+          <a
+            href="https://wa.link/tevkyx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700"
+          >
+            Chat WhatsApp
+          </a>
         </div>
 
         {/* Icono de menú para pantallas pequeñas */}
