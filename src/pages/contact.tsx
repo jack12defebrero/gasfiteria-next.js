@@ -8,7 +8,7 @@ export default function Contact() {
         <ul className="mt-4 space-y-2">
           <li>📞 Teléfono: +51 987 654 321</li>
           <li>📧 Email: gasfiteria@example.com</li>
-          <li>🌐 Ubicación: Lima, Perúcfff</li>
+          <li>🌐 Ubicación : Lima, Perúcfff</li>
         </ul>
       </div>
     );
