@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
 const Evidencia: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
     <section className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0">
       <section className="relative px-10 md:p-0 transform duration-500 hover:shadow-2xl cursor-pointer hover:-translate-y-5 rounded-3xl">
-        {/* Modal video component */}
-        <div className="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
-          {/* Video thumbnail */}
+        {/* Modal image component */}
+        <div className="[&_[x-cloak]]:hidden">
+          {/* Image thumbnail */}
           <button
             className="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
-            onClick={() => {
-              const modalElement = document.querySelector("[x-data]");
-              if (modalElement) {
-                (modalElement as any).modalOpen = true;
-              }
-            }}
+            onClick={openModal}
             aria-controls="modal"
-            aria-label="Watch the video"
+            aria-label="View the image"
           >
-            <img
+            <Image
               className="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out"
-              src="images/fondo_12.jpg"
-              alt="Modal video thumbnail"
+              src="/images/fondo_12.jpg"
+              alt="Modal image thumbnail"
+              width={600}
+              height={400}
             />
-            {/* Play icon */}
+            {/* View icon */}
             <svg
               className="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
               xmlns="http://www.w3.org/2000/svg"
@@ -37,44 +40,45 @@ const Evidencia: React.FC = () => {
               />
             </svg>
           </button>
-          {/* End: Video thumbnail */}
+          {/* End: Image thumbnail */}
 
           {/* Modal backdrop */}
-          <div
-            className="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity"
-            x-show="modalOpen"
-            aria-hidden="true"
-            x-cloak
-          ></div>
+          {modalOpen && (
+            <div
+              className="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity"
+              onClick={closeModal}
+              aria-hidden="true"
+            ></div>
+          )}
           {/* End: Modal backdrop */}
 
           {/* Modal dialog */}
-          <div
-            id="modal"
-            className="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6"
-            role="dialog"
-            aria-modal="true"
-            x-show="modalOpen"
-            x-cloak
-          >
-            <div className="max-w-5xl mx-auto h-full flex items-center">
-              <div className="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden">
-                <video
-                  width="1920"
-                  height="1080"
-                  loop
-                  controls
-                  x-init="$watch('modalOpen', value => value ? $el.play() : $el.pause())"
-                >
-                  <source src="./src/videos/inicio.mp4" type="" />
-                  Your browser does not support the video tag.
-                </video>
+          {modalOpen && (
+            <div
+              id="modal"
+              className="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6 transition-all opacity-100"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div
+                className="max-w-5xl mx-auto h-full flex items-center"
+                onClick={(e) => e.stopPropagation()} // Prevent closing modal if clicked inside
+              >
+                <div className="w-full max-h-full rounded-3xl shadow-2xl bg-black overflow-hidden">
+                  <Image
+                    src="/images/fondo_12.jpg"
+                    alt="Full-screen image"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
           {/* End: Modal dialog */}
         </div>
-        {/* End: Modal video component */}
+        {/* End: Modal image component */}
 
         <div className="rounded-3xl content bg-white p-2 pt-8 md:p-12 pb-12 lg:max-w-lg w-full lg:absolute top-48 right-5">
           <div className="flex justify-between font-bold text-sm">

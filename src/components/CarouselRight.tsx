@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const CertificationsCarousel: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -32,15 +33,33 @@ const CertificationsCarousel: React.FC = () => {
           >
             <ul className="flex items-center justify-center md:justify-start space-x-8 animate-[scrollRight_10s_linear_infinite]" aria-hidden="true">
               <li>
-                <img src="images/certificaciones/logo-construaprende.png" alt="Construaprende" />
+                <Image 
+                  src="/images/certificaciones/logo-construaprende.png" 
+                  alt="Construaprende" 
+                  width={150} 
+                  height={100} 
+                  layout="intrinsic" 
+                />
               </li>
               <li>
-                <img src="images/certificaciones/LogoSencico.png" alt="Sencico" />
+                <Image 
+                  src="/images/certificaciones/LogoSencico.png" 
+                  alt="Sencico" 
+                  width={150} 
+                  height={100} 
+                  layout="intrinsic" 
+                />
               </li>
               <li>
-                <img src="images/certificaciones/tubo_plast.png" alt="Tubo Plast" />
+                <Image 
+                  src="/images/certificaciones/tubo_plast.png" 
+                  alt="Tubo Plast" 
+                  width={150} 
+                  height={100} 
+                  layout="intrinsic" 
+                />
               </li>
-              {/* Add more logos here */}
+              {/* Agrega más logos aquí */}
             </ul>
           </div>
           {/* End: Logo Carousel animation */}
