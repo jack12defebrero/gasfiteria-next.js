@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/inicio/hero';
 import Articulo from '../components/inicio/articulo';
 import Evidencia from '../components/inicio/evidencia';
-import CarouselRight from '@/components/CarouselRight';
+import CarouselLeft from '@/components/CauruselLeft'
 
 const SectionComponent = () => {
   return (
@@ -40,8 +40,10 @@ const SectionComponent = () => {
         <Evidencia />
       </div>
 
-  {/* Coloca el carrusel en donde desees */}
-  <CarouselRight />
+
+
+  {/*Carrusel izquierdo*/}
+  <CarouselLeft />
     </div> 
   );
 };

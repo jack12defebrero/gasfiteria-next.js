@@ -2,3 +2,140 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+  /* Reset de margenes y box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Wrapper para los items */
+.wrapper {
+
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  gap: 2rem; /* Espacio de 2rem entre las filas */
+}
+
+/* Animaciones de desplazamiento */
+@keyframes scrollLeft {
+  100% {
+    left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  100% {
+    right: -200px;
+  }
+}
+
+/* Estilos generales de los items */
+.itemLeft,
+.itemRight {
+  width: 200px;
+  height: 100px;
+
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  will-change: left, right;
+  margin-right: 20px; /* Agrega un margen entre los divs */
+}
+
+/* Posición y animación de los items a la izquierda */
+.itemLeft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+}
+
+/* Posición y animación de los items a la derecha */
+.itemRight {
+  right: max(calc(200px * 8), calc(100% + 200px));
+  animation-name: scrollRight;
+}
+
+/* Estilos de los items según el orden */
+.itemLeft:nth-child(1) {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.itemLeft:nth-child(2) {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.itemLeft:nth-child(3) {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.itemLeft:nth-child(4) {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.itemLeft:nth-child(5) {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.itemLeft:nth-child(6) {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.itemLeft:nth-child(7) {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.itemLeft:nth-child(8) {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+.itemRight:nth-child(1) {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.itemRight:nth-child(2) {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.itemRight:nth-child(3) {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.itemRight:nth-child(4) {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.itemRight:nth-child(5) {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.itemRight:nth-child(6) {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.itemRight:nth-child(7) {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.itemRight:nth-child(8) {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
