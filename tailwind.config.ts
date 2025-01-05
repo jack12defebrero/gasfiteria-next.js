@@ -23,5 +23,7 @@ export default {
       },
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [
+    require('tailwind-scrollbar'),  
+  ],  
+} 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CarouselLeft from '@/components/CauruselLeft'
 
 const Hero = () => {
   const [fullName, setFullName] = useState('');
@@ -24,10 +25,12 @@ const Hero = () => {
 
   return (
     <section
-      className="text-gray-600 body-font bg-no-repeat bg-cover bg-gray-600 bg-blend-multiply border-b-8 border-indigo-500"
-      style={{ backgroundImage: 'url("images/fondo_12.jpg")' }}
+    
+      className="  text-gray-600 body-font bg-no-repeat bg-cover bg-gray-600 bg-blend-multiply border-b-8 border-indigo-500"
+      style={{ backgroundImage: 'url("images/fondo_12.webp")' }}
     >
-      <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+      
+      <div className="pt-11 container px-5  mx-auto flex flex-wrap items-center">
         <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
           <h1 className="title-font text-6xl text-white m-8 py-12 font-extrabold">
             Soluciones Figueroa
@@ -35,10 +38,15 @@ const Hero = () => {
           <h1 className="text-4xl text-white">
             Realizo los siguientes servicios: <span className="type text-red-300" />
           </h1>
+
+          
         </div>
         <div className="transform duration-500 hover:shadow-2xl cursor-pointer hover:-translate-y-5 border-2 border-rose-500 lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
           <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Escríbenos</h2>
           <div className="relative mb-4">
+
+      
+
             <label htmlFor="full-name" className="leading-7 text-sm text-gray-600">
               ¿Cuál es su nombre?
             </label>
@@ -79,6 +87,9 @@ const Hero = () => {
           <p className="text-xs text-gray-500 mt-3">Será redirigido a WhatsApp.</p>
         </div>
       </div>
+         {/*Carrusel izquierdo*/}
+   {/*Carrusel izquierdo*/}
+   <CarouselLeft />
     </section>
   );
 };

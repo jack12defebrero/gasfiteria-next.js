@@ -139,3 +139,9 @@
 .itemRight:nth-child(8) {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
+
+
+/* globals.css */
+html {
+  @apply scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent rounded;
+}
