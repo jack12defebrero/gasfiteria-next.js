@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
-import Button from './button'; // Componente Button
 import Link from 'next/link';
 import Image from 'next/image'; // Componente Image de Next.js
 

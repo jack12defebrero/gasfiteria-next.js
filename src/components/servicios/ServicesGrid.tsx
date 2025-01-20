@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Importa Image desde next/image
 
 const ServicesGrid = () => {
   const services = [
@@ -6,32 +7,30 @@ const ServicesGrid = () => {
       title: 'Transporte',
       description: 'Resumen Transporte',
       image: '/images/inicio-pagina/1er.webp',
-      imageWidth: '400px', // Ancho en píxeles
-      imageHeight: '450px', // Altura en píxeles
+      imageWidth: 400, // Ancho en píxeles
+      imageHeight: 450, // Altura en píxeles
     },
     {
       title: 'Protección Ejecutiva',
       description: 'Resumen Protección Ejecutiva',
       image: '/images/inicio-pagina/1er.webp',
-      imageWidth: '400px', // Ancho en píxeles
-      imageHeight: '450px', // Altura en píxeles
+      imageWidth: 400, // Ancho en píxeles
+      imageHeight: 450, // Altura en píxeles
     },
-
     {
-        title: 'Protección Ejecutiva',
-        description: 'Resumen Protección Ejecutiva',
-        image: '/images/inicio-pagina/1er.webp',
-        imageWidth: '400px', // Ancho en píxeles
-        imageHeight: '450px', // Altura en píxeles
-      },
-
-      {
-        title: 'Protección Ejecutiva',
-        description: 'Resumen Protección Ejecutiva',
-        image: '/images/inicio-pagina/1er.webp',
-        imageWidth: '400px', // Ancho en píxeles
-        imageHeight: '450px', // Altura en píxeles
-      },
+      title: 'Protección Ejecutiva',
+      description: 'Resumen Protección Ejecutiva',
+      image: '/images/inicio-pagina/1er.webp',
+      imageWidth: 400, // Ancho en píxeles
+      imageHeight: 450, // Altura en píxeles
+    },
+    {
+      title: 'Protección Ejecutiva',
+      description: 'Resumen Protección Ejecutiva',
+      image: '/images/inicio-pagina/1er.webp',
+      imageWidth: 400, // Ancho en píxeles
+      imageHeight: 450, // Altura en píxeles
+    },
   ];
 
   return (
@@ -52,13 +51,11 @@ const ServicesGrid = () => {
             </div>
             {/* Contenedor de la imagen */}
             <div className="md:w-1/2 p-8 flex justify-center">
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
-                style={{
-                  width: service.imageWidth,
-                  height: service.imageHeight,
-                }}
+                width={service.imageWidth} // Ancho de la imagen
+                height={service.imageHeight} // Altura de la imagen
                 className="rounded-md shadow-md"
               />
             </div>

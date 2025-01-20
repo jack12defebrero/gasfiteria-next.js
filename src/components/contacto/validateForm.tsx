@@ -1,81 +1,90 @@
-const validateForm = (formData: any, toastRef: any) => {
-    let isValid = true;
-  
-    // Validación de campos vacíos
-    if (!formData.nombre) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, ingrese su nombre.',
-        life: 3000
-      });
-      isValid = false;
-    }
-  
-    if (!formData.apellidos) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, ingrese sus apellidos.',
-        life: 3000
-      });
-      isValid = false;
-    }
-  
-    if (!formData.correo) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, ingrese su correo electrónico.',
-        life: 3000
-      });
-      isValid = false;
-    } else {
-      // Validación de formato de correo
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (!emailRegex.test(formData.correo)) {
-        toastRef.current?.show({
-          severity: 'error',
-          summary: 'Correo inválido',
-          detail: 'Por favor, ingrese un correo electrónico válido.',
-          life: 3000
-        });
-        isValid = false;
-      }
-    }
-  
-    if (!formData.telefono) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, ingrese su número de teléfono.',
-        life: 3000
-      });
-      isValid = false;
-    }
-  
-    if (!formData.mensaje) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, ingrese su mensaje.',
-        life: 3000
-      });
-      isValid = false;
-    }
-  
-    if (!formData.fechaTrabajo) {
-      toastRef.current?.show({
-        severity: 'error',
-        summary: 'Campo requerido',
-        detail: 'Por favor, seleccione una fecha de trabajo.',
-        life: 3000
-      });
-      isValid = false;
-    }
-  
-    return isValid;
-  };
-  
-  export default validateForm;
-  
+import { MutableRefObject } from 'react';
+import { Toast } from 'primereact/toast';
+
+// Definir la interfaz FormData que coincida con la del componente
+export interface FormData {
+  nombre: string;
+  apellidos: string;
+  correo: string;
+  telefono: string;
+  mensaje: string;
+  fechaTrabajo: Date | null;
+}
+
+const validateForm = (data: FormData, toastRef: MutableRefObject<Toast | null>): boolean => {
+  if (!data.nombre.trim()) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'El nombre es requerido',
+      life: 3000,
+    });
+    return false;
+  }
+
+  if (!data.apellidos.trim()) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'Los apellidos son requeridos',
+      life: 3000,
+    });
+    return false;
+  }
+
+  if (!data.correo.trim()) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'El correo es requerido',
+      life: 3000,
+    });
+    return false;
+  }
+
+  // Validar formato de correo electrónico
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(data.correo)) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'El formato del correo no es válido',
+      life: 3000,
+    });
+    return false;
+  }
+
+  if (!data.telefono.trim()) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'El teléfono es requerido',
+      life: 3000,
+    });
+    return false;
+  }
+
+  if (!data.mensaje.trim()) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'El mensaje es requerido',
+      life: 3000,
+    });
+    return false;
+  }
+
+  if (!data.fechaTrabajo) {
+    toastRef.current?.show({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'La fecha de trabajo es requerida',
+      life: 3000,
+    });
+    return false;
+  }
+
+  return true;
+};
+
+export default validateForm;

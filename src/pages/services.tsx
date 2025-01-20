@@ -3,7 +3,6 @@ import { HoverEffect } from "../components/servicios/servicesnew"; // Ajusta la 
 import Button from "../components/button"; // Asegúrate de que el componente Button esté correctamente configurado
 
 const Servicios: React.FC = () => {
-  // Datos para las tarjetas de servicios
   const servicios = {
     "Instalaciones desde 0": [
       { 
@@ -75,8 +74,6 @@ const Servicios: React.FC = () => {
     <section className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-center mb-12">Nuestros Servicios</h1>
-
-        {/* Secciones de servicios con HoverEffect */}
         {Object.entries(servicios).map(([categoria, items]) => (
           <div key={categoria} className="mt-12">
             <h2 className="text-2xl font-semibold mb-6">{categoria}</h2>
@@ -87,13 +84,12 @@ const Servicios: React.FC = () => {
                   <>
                     <p>{servicio.description}</p>
                     <div className="mt-5">
-                        <Button text="Solicita ya!!" link={servicio.link}/>
+                      <Button text="Solicita ya!!" link={servicio.link} />
                     </div>
-                  
                   </>
                 ),
                 link: servicio.link,
-              }))} 
+              }))}
               className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4" 
             />
           </div>

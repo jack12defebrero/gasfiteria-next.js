@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const NewServices: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [,setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import Hero from '../components/inicio/hero';
 import NewHero from '@/components/inicio/newhero';
 import Evidencia from '../components/inicio/evidencia';
 import Articulos from "../components/inicio/articulo";
