@@ -1,3 +1,7 @@
+import 'primereact/resources/themes/lara-light-blue/theme.css'; // Tema de PrimeReact
+import 'primereact/resources/primereact.min.css'; // Estilos principales
+import 'primeicons/primeicons.css'; // Iconos de PrimeIcons
+
 import { AppProps } from 'next/app';
 import Navbar from '../components/Navbar'; // Importa el componente Navbar
 import Footer from '../components/Footer'; // Importa el componente Footer

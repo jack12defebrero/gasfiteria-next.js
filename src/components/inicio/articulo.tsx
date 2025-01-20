@@ -1,10 +1,11 @@
 import React from "react";
+import Button from "../button"; // Asegúrate de que este archivo exista
 
 // Datos de los artículos
 const articulosData = [
   {
     title: "On A Day Like Today",
-    image: "/images/inicio-pagina/1er.webp", // Usa rutas relativas a `public`
+    image: "/images/inicio-pagina/1er.webp",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, beatae!",
     buttonLink: "https://wa.link/tevkyx",
     buttonText: "Solicita ya!!",
@@ -17,39 +18,29 @@ const articulosData = [
     buttonText: "Solicita ya!!",
   },
   {
-    title: "Yet Another Title",
+    title: "Another Title",
     image: "/images/inicio-pagina/1er.webp",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, beatae!",
     buttonLink: "https://wa.link/tevkyx",
     buttonText: "Solicita ya!!",
   },
-
   {
-    title: "Yet Another Title",
+    title: "Another Title",
     image: "/images/inicio-pagina/1er.webp",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, beatae!",
     buttonLink: "https://wa.link/tevkyx",
     buttonText: "Solicita ya!!",
   },
-
   {
-    title: "Yet Another Title",
+    title: "Another Title",
     image: "/images/inicio-pagina/1er.webp",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, beatae!",
-    buttonLink: "https://wa.link/tevkyx",
-    buttonText: "Solicita ya!!",
-  },
-
-  {
-    title: "On A Day Like Today",
-    image: "/images/inicio-pagina/1er.webp", // Usa rutas relativas a `public`
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, beatae!",
     buttonLink: "https://wa.link/tevkyx",
     buttonText: "Solicita ya!!",
   },
 ];
 
-// Componente de artículo individual
+// Tipos para las propiedades
 type ArticuloProps = {
   title: string;
   image: string;
@@ -58,12 +49,13 @@ type ArticuloProps = {
   buttonText: string;
 };
 
-const Articulo = ({ title, image, description, buttonLink, buttonText }: ArticuloProps) => (
+// Componente de artículo individual
+const Articulo: React.FC<ArticuloProps> = ({ title, image, description, buttonLink, buttonText }) => (
   <article
-    className="rounded-3xl mx-auto max-w-sm shadow-xl bg-cover bg-center min-h-150 transform duration-500 hover:-translate-y-2 cursor-pointer group"
+    className="  rounded-3xl mx-auto max-w-sm shadow-xl bg-cover bg-center min-h-[150px] transform duration-500 hover:-translate-y-2 cursor-pointer group"
     style={{ backgroundImage: `url(${image})` }}
   >
-    <div className="rounded-3xl bg-black bg-opacity-20 min-h-150 px-10 flex flex-wrap flex-col pt-96 hover:bg-opacity-75 transform duration-300">
+    <div className="rounded-3xl bg-black bg-opacity-40 min-h-[150px] px-10 flex flex-wrap flex-col pt-20 hover:bg-opacity-75 transform duration-300">
       <h1 className="text-white text-3xl mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300">
         {title}
       </h1>
@@ -71,22 +63,22 @@ const Articulo = ({ title, image, description, buttonLink, buttonText }: Articul
       <p className="opacity-0 text-white text-xl group-hover:opacity-80 transform duration-500">
         {description}
       </p>
-      <a className="pb-8" href={buttonLink} target="_blank" rel="noopener noreferrer">
-        <button className="rounded-md mt-2 md:mt-5 p-3 px-5 bg-slate-400 text-white font-bold text-sm hover:bg-purple-800">
-          {buttonText}
-        </button>
-      </a>
+      <div className="pb-8">
+        <Button link={buttonLink} text={buttonText} />
+      </div>
     </div>
   </article>
 );
 
 // Componente contenedor de todos los artículos
-const Articulos = () => {
+const Articulos: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
+
+    <div className="bg-gray-100 py-20  border-b-4 rounded-b-[80px]">
+      <div className="py-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {articulosData.map((articulo, index) => (
         <Articulo
-          key={index}
+          key={articulo.title}      
           title={articulo.title}
           image={articulo.image}
           description={articulo.description}
@@ -95,6 +87,8 @@ const Articulos = () => {
         />
       ))}
     </div>
+    </div>
+    
   );
 };
 

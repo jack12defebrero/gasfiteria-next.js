@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Button from "../button";
 
 const Evidencia: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -90,11 +91,9 @@ const Evidencia: React.FC = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aperiam nulla cupiditate saepe sed quis veritatis
             minus rem adipisci aliquid.
           </p>
-          <a href="https://wa.link/tevkyx" target="_blank" rel="noopener noreferrer">
-            <button className="rounded-md mt-2 md:mt-5 p-3 px-5 bg-black text-white font-bold text-sm hover:bg-purple-800">
-              Solicita ya!!
-            </button>
-          </a>
+          
+         
+      <Button text="Solicita ya!!" link="https://wa.link/tevkyx" />
         </div>
       </section>
     </section>

@@ -145,3 +145,24 @@
 html {
   @apply scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent rounded;
 }
+
+
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.append-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}

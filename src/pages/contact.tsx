@@ -1,16 +1,19 @@
-export default function Contact() {
-    return (
+import React from 'react';
+import ContactForm from '../components/contacto/ContactForm';
+import NewContact from '../components/contacto/newcontact';
+
+const Contact = () => {
+  return (
+    <div className="page-container">
+      <ContactForm />
+
       <div>
-        <h1 className="text-3xl font-bold">Contacto</h1>
-        <p className="mt-4 text-lg">
-          Si necesitas más información o quieres agendar una cita, no dudes en contactarme.
-        </p>
-        <ul className="mt-4 space-y-2">
-          <li>📞 Teléfono: +51 987 654 321</li>
-          <li>📧 Email: gasfiteria@example.com</li>
-          <li>🌐 Ubicación : Lima, Perúcfff</li>
-        </ul>
+
+      <NewContact />
       </div>
-    );
-  }
-  
+    </div>
+
+  );
+};
+
+export default Contact;
