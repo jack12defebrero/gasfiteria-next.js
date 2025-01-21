@@ -25,13 +25,13 @@ const NewHero = () => {
   return (
     <section
       id="inicio"
-      className=" relative min-h-screen flex items-center bg-cover bg-fixed bg-center"
+      className=" border-b-4 rounded-b-[40px]  relative min-h-screen flex items-center bg-cover bg-fixed bg-center"
       style={{
         backgroundImage: `url('/images/fondo_12.webp')`,
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/70"></div>
-      <div className="container mx-auto px-4 relative ">
+      <div className="border-b-4 rounded-b-[40px] absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/70"></div>
+      <div className=" container mx-auto px-4 relative ">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className=" text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
           <p>
@@ -52,7 +52,7 @@ const NewHero = () => {
           </div>
         </div>
       </div>
-      <div className=" absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent">
+      <div className=" border-b-4 rounded-b-[40px] absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent">
         <div className=" container mx-auto px-4 py-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (

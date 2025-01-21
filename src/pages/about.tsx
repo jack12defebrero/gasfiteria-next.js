@@ -2,11 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import { Card } from 'primereact/card';
 import Button from '@/components/button';
+import TimelineDemo from '@/components/sobreMi/timelineDemo';
 
 const SobreMi: React.FC = () => {
   return (
-    <section className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className=" bg-gray-50 py-12">
+      <div className="pt-28 max-w-7xl mx-auto px-4">
         {/* Imagen destacada en el centro */}
         <div className="mb-8 flex justify-center">
           <Image
@@ -52,7 +53,17 @@ const SobreMi: React.FC = () => {
             <Button text="Contactame" link="https://wa.link/tevkyx" />
           </Card>
         </div>
+        
       </div>
+
+      {/* Timeline */}
+   <div>
+    <TimelineDemo />
+   </div>
+      
+   
+        
+      
     </section>
   );
 };

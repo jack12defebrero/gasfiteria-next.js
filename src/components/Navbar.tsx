@@ -34,12 +34,15 @@ const Navbar = () => {
     nav: scrolled
       ? 'bg-white bg-opacity-80 shadow-md backdrop-blur-lg'  // Fondo blanco con opacidad y blur
       : 'bg-gray-800 backdrop-blur-sm',  // Fondo transparente con blur
+    menuButton: 'md:hidden flex items-center p-2 rounded-full bg-blue-600',  // Fondo sólido azul en móviles
   };
-
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${classNames.nav}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
+        ${classNames.nav} 
+        ${scrolled && !isMenuOpen ? 'shadow-md' : ''} 
+        ${isMenuOpen ? '' : 'lg:my-8 lg:mx-24 lg:rounded-full'}`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         {/* Logo */}
@@ -54,7 +57,7 @@ const Navbar = () => {
               />
               <span
                 className={`text-2xl font-bold transition-colors ${
-                  scrolled ? 'text-blue-600' : 'text-white'
+                  scrolled || isMenuOpen ? 'text-blue-600' : 'text-white'
                 }`}
               >
                 IISS
@@ -66,24 +69,16 @@ const Navbar = () => {
         {/* Menú de navegación (desktop) */}
         <div className="hidden md:flex space-x-8">
           <Link href="/">
-            <span className={classNames.link}>
-              {t('Inicio')}
-            </span>
+            <span className={classNames.link}>{t('Inicio')}</span>
           </Link>
           <Link href="/about">
-            <span className={classNames.link}>
-              {t('Nosotros')}
-            </span>
+            <span className={classNames.link}>{t('Nosotros')}</span>
           </Link>
           <Link href="/services">
-            <span className={classNames.link}>
-              {t('Servicios')}
-            </span>
+            <span className={classNames.link}>{t('Servicios')}</span>
           </Link>
           <Link href="/contact">
-            <span className={classNames.link}>
-              {t('Contacto')}
-            </span>
+            <span className={classNames.link}>{t('Contacto')}</span>
           </Link>
         </div>
 
@@ -96,7 +91,7 @@ const Navbar = () => {
         </a>
 
         {/* Menú móvil */}
-        <div className="md:hidden flex items-center">
+        <div className={classNames.menuButton}>
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none"

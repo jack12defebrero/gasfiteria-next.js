@@ -34,7 +34,7 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <div className="space-y-10">
+    <div className="mx-3 space-y-10">
       {services.map((service, index) => (
         <div key={index} className={`flex justify-center`}>
           {/* Contenedor principal alargado */}

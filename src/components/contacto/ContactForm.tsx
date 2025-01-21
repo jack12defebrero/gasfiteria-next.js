@@ -55,7 +55,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+    <div className=" max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
       <Toast ref={toastRef} />
 
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">

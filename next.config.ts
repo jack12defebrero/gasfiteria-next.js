@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    domains: ['images.unsplash.com', 'assets.aceternity.com'], // Agrega el nuevo dominio
+  },
   i18n: {
     locales: ['en', 'es'],
     defaultLocale: 'en',

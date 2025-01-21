@@ -4,7 +4,7 @@ import NewContact from '../components/contacto/newcontact';
 
 const Contact = () => {
   return (
-    <div className="page-container">
+    <div className=" pt-32 page-container">
       <ContactForm />
 
       <div>
