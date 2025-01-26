@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
           I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+          a timeline of my journey. pero bueno cvopmioo se diuce uie cada oprgrama de cada lkenguaje es deifwerwente por lo cual estio es diferente a la  producción-
         </p>
       </div>
 
