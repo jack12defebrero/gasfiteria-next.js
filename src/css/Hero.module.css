@@ -1,0 +1,9 @@
+.hero {
+    background-image: url('/public/images/fondo_12.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

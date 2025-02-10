@@ -1,0 +1,61 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  /* Reset de margenes y box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+body {
+  @apply bg-gradient-to-b from-gray-50 to-gray-100;
+}
+
+/* Animaciones de desplazamiento */
+@keyframes scrollLeft {
+  100% {
+    left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  100% {
+    right: -200px;
+  }
+}
+
+
+
+
+/* globals.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+
+
+
+.append-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
